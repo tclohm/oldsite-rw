@@ -1,8 +1,13 @@
+import { Link, routes } from "@redwoodjs/router"
+import { Breadcrumb, BreadcrumbItem } from "reactstrap"
+
 const ProjectPage = () => {
   return (
-    <div>
-      <h1>ProjectPage</h1>
-      <p>Find me in ./web/src/pages/ProjectsPage/ProjectsPage.js</p>
+  	<div>
+    	<Breadcrumb>
+  			<BreadcrumbItem><Link to={routes.home()}>Home</Link></BreadcrumbItem>
+  			<BreadcrumbItem active>Projects</BreadcrumbItem>
+  		</Breadcrumb>
     </div>
   )
 }

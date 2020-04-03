@@ -6,6 +6,8 @@ import Routes from 'src/Routes'
 
 import './index.css'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 ReactDOM.render(
   <FatalErrorBoundary page={FatalErrorPage}>
     <RedwoodProvider>

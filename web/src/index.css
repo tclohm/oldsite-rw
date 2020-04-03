@@ -1,1 +1,80 @@
+body {
+	animation-name: fade;
+	animation-duration: 2s;
+}
 
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+h1 {
+	font-family: 'Baloo Da 2';
+}
+
+span {
+	font-family: 'Baloo Da 2', cursive;
+	font-weight: 600;
+}
+
+p {
+	font-family: 'Baloo Da 2', cursive;
+}
+
+a {
+	color: lightgrey;
+}
+
+.link {
+	color: lightgrey;
+}
+
+.link:hover {
+	color: darkgrey;
+}
+
+a:hover {
+	color: darkblue;
+}
+
+.bulb:hover {
+	cursor: pointer;
+	color: darkgrey;
+}
+
+
+@keyframes swing {
+	0% { 
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg); 
+	}
+	50% { 
+		-webkit-transform: rotate(65deg);
+		-moz-transform: rotate(65deg);
+		-ms-transform: rotate(65deg);
+		transform: rotate(65deg); 
+	}
+	100% { 
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg); 
+	}
+}
+
+.swing {
+	animation-name: swing;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}
+
+.dark-mode {
+	color: #fff;
+	background: #1E1F21;
+}
