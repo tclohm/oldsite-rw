@@ -17,8 +17,16 @@ const BlogLayout = ({ children }) => {
         </Row>
         <Row>
           <Col>
-            <Link to={routes.projects()}><Button outline color="primary" className="inline">Projects</Button></Link>
-            <Link to={routes.writings()}><Button outline color="primary" className="inline ml-3">Writing</Button></Link>
+            <Link to={routes.projects()}>
+            	<Button outline color="primary" className="inline">
+            		<i className="fas fa-project-diagram"></i> Projects
+            	</Button>
+            </Link>
+            <Link to={routes.writings()}>
+            	<Button outline color="primary" className="inline ml-3">
+            		<i className="fas fa-feather-alt"></i> Writing
+            	</Button>
+            </Link>
           </Col>
         </Row>
         <main>{children}</main>
