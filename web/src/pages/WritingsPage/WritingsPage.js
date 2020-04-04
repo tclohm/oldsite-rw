@@ -10,7 +10,7 @@ const WritingPage = () => {
 	<BlogLayout>
 	  	<div className="mt-3">
 	    	<Breadcrumb>
-	  			<BreadcrumbItem><Link to={routes.home()}><i class="fas fa-home"></i></Link></BreadcrumbItem>
+	  			<BreadcrumbItem><Link to={routes.home()}><i className="fas fa-home"></i></Link></BreadcrumbItem>
 	  			<BreadcrumbItem active><i className="fas fa-feather-alt"></i></BreadcrumbItem>
 	  		</Breadcrumb>
 	    </div>
