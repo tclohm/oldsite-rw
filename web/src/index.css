@@ -30,11 +30,11 @@ a {
 }
 
 .link {
-	color: lightgrey;
+	color: lightblue;
 }
 
 .link:hover {
-	color: darkgrey;
+	color: darkblue;
 }
 
 a:hover {
@@ -77,4 +77,12 @@ a:hover {
 .dark-mode {
 	color: #fff;
 	background: #1E1F21;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.hidden-link {
+	color: black;
 }
