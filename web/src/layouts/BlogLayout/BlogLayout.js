@@ -13,7 +13,7 @@ const BlogLayout = ({ children }) => {
           <Col sm={{ offset: 1 }}>
             <a className="link" href="https://github.com/tclohm"><i className="fab fa-github-square fa-2x"></i></a>
             <a className="link ml-3" href="https://angel.co/tlohm"><i className="fab fa-angellist fa-2x"></i></a>
-            <Link to={routes.contact()}></Link>
+            <Link className="link ml-3" to={routes.contact()}><i className="fas fa-address-card fa-2x"></i></Link>
           </Col>
         </Row>
         <Row>
