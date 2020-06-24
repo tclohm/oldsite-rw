@@ -1,7 +1,12 @@
+import { useState } from "react"
 import { Link, routes } from "@redwoodjs/router"
-import { Container, Row, Col, Button } from "reactstrap"
+import { Container, Row, Col, Button, Collapse } from "reactstrap"
 
 const BlogLayout = ({ children }) => {
+
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+
   return  (
   <Container>
         <Row className="mt-5">
@@ -11,9 +16,23 @@ const BlogLayout = ({ children }) => {
             <p>Web and iOS Developer</p>
           </Col>
           <Col sm={{ offset: 1 }}>
-            <a className="link" href="https://github.com/tclohm"><i className="fab fa-github-square fa-2x"></i></a>
-            <a className="link ml-3" href="https://angel.co/tlohm"><i className="fab fa-angellist fa-2x"></i></a>
-            <Link className="link ml-3" to={routes.contact()}><i className="fas fa-address-card fa-2x"></i></Link>
+            <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>
+              Links
+            </Button>
+            <Collapse isOpen={isOpen}>
+              <Row>
+                <a className="link ml-5" href="https://github.com/tclohm"><i className="fab fa-github-square fa-2x"></i></a>
+              </Row>
+              <Row>
+                <a className="link ml-5" href="https://angel.co/tlohm"><i className="fab fa-angellist fa-2x"></i></a>
+              </Row>
+              <Row>
+                <a className="link ml-5" href="https://www.linkedin.com/in/taylorclohman/"><i className="fab fa-linkedin fa-2x"></i></a>
+              </Row>
+              <Row>
+                <Link className="link ml-4 pl-3" to={routes.contact()}><i className="fas fa-address-card fa-2x"></i></Link>
+              </Row>
+            </Collapse>
           </Col>
         </Row>
         <Row>
