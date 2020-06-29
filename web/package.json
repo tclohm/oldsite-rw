@@ -6,6 +6,8 @@
     "defaults"
   ],
   "dependencies": {
+    "@giphy/js-fetch-api": "^1.5.9",
+    "@giphy/react-components": "^1.1.0",
     "@redwoodjs/router": "^0.3.2",
     "@redwoodjs/web": "^0.3.2",
     "bootstrap": "^4.4.1",
