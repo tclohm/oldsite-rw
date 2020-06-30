@@ -2,7 +2,7 @@ import { Link, routes } from "@redwoodjs/router"
 
 const BlogPost = ({ post }) => {
   return (
-    <article>
+    <article className="fade-up-and-in-animation">
     	<header>
     		<h2>
     			<Link to={routes.blogPost({ id: post.id })}>{post.title}</Link>

@@ -1,9 +1,7 @@
 export const schema = gql`
   type Contact {
     id: Int!
-    name: String!
     email: String!
-    message: String!
     createdAt: DateTime!
   }
 
@@ -12,15 +10,11 @@ export const schema = gql`
   }
 
   input CreateContactInput {
-    name: String!
     email: String!
-    message: String!
   }
 
   input UpdateContactInput {
-    name: String
     email: String
-    message: String
   }
 
   type Mutation {

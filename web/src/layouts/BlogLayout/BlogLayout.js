@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Link, routes } from "@redwoodjs/router"
 import { Container, Row, Col, Button, Collapse } from "reactstrap"
 import { useSessionStorage } from "../../hooks/useSessionStorage"
@@ -12,7 +11,6 @@ const BlogLayout = ({ children }) => {
   const [onHome, setOnHome] = useSessionStorage("onHome", true);
 
   function toggle(event) {
-    console.log(event.currentTarget.name)
     switch (event.currentTarget.name) {
       case "links":
         const contactBtn = document.querySelector('.contact-links')

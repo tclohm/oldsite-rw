@@ -86,3 +86,33 @@ a:hover {
 .hidden-link {
 	color: black;
 }
+
+.email-field {
+	height: 2.55rem;
+	width: 100%;
+	border-radius: 0.2rem;
+	border-style: solid;
+	border-width: 0.08rem;
+	border-color: black;
+	border-right-style: none;
+	border-top-right-radius: 0rem;
+	border-bottom-right-radius: 0rem;
+	box-shadow: 0;
+}
+
+.fade-up-and-in-animation {
+	animation: upAndFadeInAnimation ease-out 0.4s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes upAndFadeInAnimation {
+	0% {
+		opacity: 0;
+		margin-top: 30px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+}

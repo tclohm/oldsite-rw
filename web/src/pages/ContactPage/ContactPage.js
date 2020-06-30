@@ -6,10 +6,14 @@ import {
 	FieldError,
 	Label,
 	useMutation,
-	FormError
+	FormError,
 } from "@redwoodjs/web"
 
-import { Button, Row, Col, FormFeedback } from "reactstrap"
+import { Link, routes } from "@redwoodjs/router"
+
+import { useSessionStorage } from "../../hooks/useSessionStorage"
+
+import { Button, Row, Col, FormFeedback, Breadcrumb, BreadcrumbItem } from "reactstrap"
 
 import { useForm } from "react-hook-form"
 
@@ -24,6 +28,10 @@ const CREATE_CONTACT = gql`
 `
 
 const ContactPage = (props) => {
+
+	const [onHome, setOnHome] = useSessionStorage("onHome", false); 
+	const [onContact, setOnContact] = useSessionStorage("onContact", true);
+
 	const formMethods = useForm()
 
 	const [create, { loading, error }] = useMutation(CREATE_CONTACT, {
@@ -38,9 +46,21 @@ const ContactPage = (props) => {
 		console.log(data)
 	}
 
+	function home() {
+		setOnHome(!onHome)
+		setOnContact(!onContact)
+	}
+
 	return ( 
 		<BlogLayout>
-				<Form 
+				<div className="mt-3">
+				<Breadcrumb>
+						<BreadcrumbItem><Link to={routes.home()}><i className="fas fa-home" onClick={home}></i></Link></BreadcrumbItem>
+						<BreadcrumbItem active><i className="fas fa-envelope"></i></BreadcrumbItem>
+				</Breadcrumb>
+				</div>
+				<Form
+					className="fade-up-and-in-animation" 
 					onSubmit={onSubmit} 
 					validation={{ mode: "onBlur" }} 
 					error={error}
@@ -53,66 +73,43 @@ const ContactPage = (props) => {
 								/>
 						</Col>
 					</Row>
-					<Row className="mb-3">
-						<Col xs={{ offset: 4 }}>
-							<Label 
-								name="name" 
-								errorClassName="error"
-								style={{ display: 'block' }}>
-								Name
-							</Label>
-							<TextField 
-								name="name"
-								validation={{ required: "Please enter your name" }} 
-								errorClassName="error"
-							/>
-							<FieldError name="name" className="error"/>
-						</Col>
-					</Row>
-					<Row className="mb-3">
-						<Col xs={{ offset: 4 }}>
+					<Row className="mb-2">
+						<Col className="justify-content-center" xs={{size: 7, offset: 0}} lg={{ size: 5, offset: 3 }}>
 						<Label 
 							name="email" 
 							errorClassName="error" 
 							style={{ display: 'block' }}>
-							Email
+							Leave your email and I'll write to you
 						</Label>
-						<TextField 
+						</Col>
+					</Row>
+					<Row>
+						<Col className="justify-content-center mr-0 pr-0" xs={{size: 7, offset: 0}} lg={{ size: 5, offset: 3 }}>
+						<TextField
 							name="email" 
 							validation={{ 
 								required: "Please enter your email",
 							}} 
-							errorClassName="error"
+							errorClassName="email-field"
+							className="email-field"
+							placeholder="Type your email..."
+							style={{ 'text-indent': '1rem'}}
 						/>
-						<FieldError name="message"/>
+						<FieldError name="email" style={{ display: 'block' }}/>
 						</Col>
-					</Row>
-					<Row>
-						<Col xs={{ offset: 4 }}>
-						<Label 
-							name="message" 
-							errorClassName="error" 
-							style={{ display: 'block' }}>
-							Message
-						</Label>
-						<TextAreaField 
-							name="message" 
-							validation={{ required: 'Please enter a message' }}
-							errorClassName="error"
-						/>
-						<FieldError name="message" />
-						</Col>
-					</Row>
-					<Row>
-						<Col xs={{ offset: 4 }}>
-						<Button color="success">
-							<Submit
-
-								style={{ backgroundColor: 'transparent', border: '0px' }}>
-									<i className="far fa-paper-plane"style={{ color: 'white' }}>
-									</i>
-							</Submit>
-						</Button>
+						<Col className="ml-0 pl-0">
+							<Button color="success"
+									style={{
+										'height': '2.55rem',
+										'borderTopLeftRadius': '0rem',
+										'borderBottomLeftRadius': '0rem'
+									}}>
+								<Submit
+									style={{ backgroundColor: 'transparent', border: '0px' }}>
+										<i className="far fa-paper-plane"style={{ color: 'white' }}>
+										</i>
+								</Submit>
+							</Button>
 						</Col>
 					</Row>
 				</Form>
