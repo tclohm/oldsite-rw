@@ -51,21 +51,7 @@
     {
       "tag": "CreateField",
       "model": "Contact",
-      "field": "name",
-      "type": "String",
-      "arity": "Required"
-    },
-    {
-      "tag": "CreateField",
-      "model": "Contact",
       "field": "email",
-      "type": "String",
-      "arity": "Required"
-    },
-    {
-      "tag": "CreateField",
-      "model": "Contact",
-      "field": "message",
       "type": "String",
       "arity": "Required"
     },
