@@ -100,6 +100,23 @@ a:hover {
 	box-shadow: 0;
 }
 
+.date-font {
+	color: darkgray;
+	font-size: 0.8rem;
+}
+
+.blog-title {
+	color: black;
+}
+
+.blog-para {
+	color: black;
+}
+
+.img-max-height {
+	max-height: 22rem;
+}
+
 .fade-up-and-in-animation {
 	animation: upAndFadeInAnimation ease-out 0.4s;
 	animation-iteration-count: 1;

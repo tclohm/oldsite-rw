@@ -3,6 +3,7 @@ export const schema = gql`
     id: Int!
     title: String!
     body: String!
+    image: String!
     createdAt: DateTime!
   }
 
@@ -14,6 +15,7 @@ export const schema = gql`
   input PostInput {
     title: String
     body: String
+    image: String
   }
 
   type Mutation {

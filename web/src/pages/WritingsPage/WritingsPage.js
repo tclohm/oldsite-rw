@@ -1,6 +1,6 @@
 import { Link, routes } from "@redwoodjs/router"
 import { useSessionStorage } from "../../hooks/useSessionStorage"
-import { Breadcrumb, BreadcrumbItem } from "reactstrap"
+import { Breadcrumb, BreadcrumbItem, Container, Row, Col } from "reactstrap"
 
 import BlogLayout from "src/layouts/BlogLayout"
 import BlogPostsCell from "src/components/BlogPostsCell"
@@ -23,7 +23,13 @@ const WritingPage = () => {
 					<BreadcrumbItem active><i className="fas fa-feather-alt"></i></BreadcrumbItem>
 				</Breadcrumb>
 			</div>
-			<BlogPostsCell />
+			<Container>
+				<Row>
+					<Col>
+						<BlogPostsCell />
+					</Col>
+				</Row>
+			</Container>
 		</BlogLayout>
 	)
 }

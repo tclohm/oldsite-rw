@@ -47,6 +47,20 @@ const PostForm = (props) => {
         <FieldError name="title" className={CSS.errorMessage} />
 
         <Label
+          name="image"
+          className={CSS.Label}
+          errorClassName={CSS.labelError}
+        />
+        <TextField
+          name="image"
+          defaultValue={props.post?.image}
+          className={CSS.input}
+          errorClassName={CSS.inputError}
+          validation={{ required: true }}
+        />
+        <FieldError name="image" className={CSS.errorMessage} />
+
+        <Label
           name="body"
           className={CSS.label}
           errorClassName={CSS.labelError}
