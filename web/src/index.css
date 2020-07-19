@@ -123,6 +123,38 @@ a:hover {
 	animation-fill-mode: forwards;
 }
 
+.bg {
+	height: 7rem;
+	width: 100vw;
+	background-image: url("../public/popcorn.png");
+	background-repeat: repeat;
+	background-position: left;
+	background-size: contain;
+}
+
+.first {
+	position: relative;
+	z-index: 2;
+}
+
+.second {
+	position: relative;
+	z-index: 1;
+	margin-top: -2.9rem;
+}
+
+.third {
+	position: relative;
+	z-index: 0;
+	margin-top: -2.9rem;
+}
+
+.fourth {
+	position: relative;
+	z-index: -1;
+	margin-top: -2.9rem;
+}
+
 @keyframes upAndFadeInAnimation {
 	0% {
 		opacity: 0;
