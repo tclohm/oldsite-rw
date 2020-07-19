@@ -23,7 +23,7 @@ const WritingPage = () => {
 					<BreadcrumbItem active><i className="fas fa-feather-alt"></i></BreadcrumbItem>
 				</Breadcrumb>
 			</div>
-			<Container>
+			<Container className="mb-5">
 				<Row>
 					<Col>
 						<BlogPostsCell />

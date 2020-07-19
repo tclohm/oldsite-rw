@@ -63,7 +63,7 @@ const ProjectPage = () => {
 				</Row>
 				</a>
 				<a href="https://essentialism-kse2qjaax.now.sh">
-				<Row className="mt-5 fade-up-and-in-animation">
+				<Row className="mt-5 mb-5 fade-up-and-in-animation">
 					<Col xs={{ size: 4 }}>
                     <img className="img-fluid rounded mt-sm-3 mt-md-2 mt-lg-0 mt-5 img-max-height" src={essentialism}/>
                 </Col>
