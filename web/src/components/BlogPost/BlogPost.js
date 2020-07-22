@@ -14,7 +14,7 @@ const BlogPost = ({ post }) => {
                     <Row>
                         <Col className="mt-md-5 pt-md-3 mt-5" xs={{ size: 12 }}>
                             <h4 className="blog-title">{post.title}</h4>
-                            <p className="blog-para">{(post.body).substring(0,100)}...</p>
+                            <p className="blog-para">{post.body}</p>
                         </Col>
                     </Row>
                     <Row>
