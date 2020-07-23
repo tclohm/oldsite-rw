@@ -5,6 +5,22 @@ const HomePage = () => {
 	return (
 		<>
 			<BlogLayout></BlogLayout>
+			<Container>
+			<Row className="mt-5">
+				<Col>
+					<h5>
+						Welcome
+					</h5>
+					<h5>
+						I love working with great people
+					</h5>
+					<h5>
+						and building tools and apps
+					</h5>
+					<div className="memoji mt-5 ml-5"></div>
+				</Col>
+			</Row>
+			</Container>
 			<div className="illustration">
 				<div className="center">
 					<div className="circle index-1"></div>

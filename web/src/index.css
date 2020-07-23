@@ -123,15 +123,6 @@ a:hover {
 	animation-fill-mode: forwards;
 }
 
-.bg {
-	height: 7rem;
-	width: 100vw;
-	background-image: url("../public/popcorn.png");
-	background-repeat: repeat;
-	background-position: left;
-	background-size: contain;
-}
-
 @keyframes upAndFadeInAnimation {
 	0% {
 		opacity: 0;
@@ -141,6 +132,14 @@ a:hover {
 		opacity: 1;
 		margin-top: 0px;
 	}
+}
+
+.memoji {
+	background-image: url("../public/memoji-sticker.png");
+	background-repeat: no-repeat;
+	background-size: 10rem;
+	width: 10rem;
+	height: 10rem;
 }
 
 .illustration {
@@ -155,9 +154,9 @@ a:hover {
 }
 
 .illustration .center {
- position:absolute;
- top:50%;
- right:0%;
+	position:absolute;
+	top: 90%;
+	right: 0%;
 }
 
 .illustration .circle {
@@ -169,64 +168,64 @@ a:hover {
 }
 
 .illustration .circle.index-1 {
- width:250px;
- height:250px;
- margin-top:-125px;
- margin-left:-125px;
+	width: 100px;
+	height: 100px;
+	margin-top:-230px;
+	margin-left:-50px;
 }
 .illustration .circle.index-2 {
- width:400px;
- height:400px;
- margin-top:-200px;
- margin-left:-200px
+	width: 200px;
+	height: 200px;
+	margin-top:-280px;
+	margin-left:-100px
 }
 
 .illustration .circle.index-3 {
- width:550px;
- height:550px;
- margin-top:-275px;
- margin-left:-275px
+	width: 300px;
+	height: 300px;
+	margin-top:-330px;
+	margin-left:-150px
 }
 
 .illustration .circle.index-4 {
- width:700px;
- height:700px;
- margin-top:-350px;
- margin-left:-350px
+	width:400px;
+	height:400px;
+	margin-top:-380px;
+	margin-left:-200px
 }
 
 .illustration .circle.index-5 {
- width:850px;
- height:850px;
- margin-top:-425px;
- margin-left:-425px
+	width:500px;
+	height:500px;
+	margin-top:-430px;
+	margin-left:-250px;
 }
 
 .illustration .disc {
- position:absolute;
- top:0;
- left:0;
- animation: disc-rotation 2s infinite linear;
- will-change:transform
+	position:absolute;
+	top: -175px;
+	left:0;
+	animation: disc-rotation 2s infinite linear;
+	will-change:transform
 }
 
 .illustration .disc .inner {
- position:absolute;
- top:0;
- border-radius:999px;
- background: white;
+	position:absolute;
+	top:0;
+	border-radius:999px;
+	background: white;
 }
 
 .illustration .disc.index-1 {
- animation-duration:6.1s
+	animation-duration:6.1s
 }
 
 .illustration .disc.index-1 .inner {
- top:-125px;
- width:20px;
- height:20px;
- margin-top:-5px;
- margin-left:-5px;
+	top:-50px;
+	width:30px;
+	height:30px;
+	margin-top:-5px;
+	margin-left:-5px;
 }
 
 .illustration .disc.index-1 .inner:before {
@@ -235,18 +234,19 @@ a:hover {
  	font-size: 2rem;
  	position: relative;
  	top: -15px;
+ 	color: coral;
 }
 
 .illustration .disc.index-2 {
- animation-duration:11.2s
+	animation-duration:11.2s
 }
 
 .illustration .disc.index-2 .inner {
- top:-200px;
- width:20px;
- height:20px;
- margin-top:-10px;
- margin-left:-10px;
+	top:-100px;
+	width:35px;
+	height:30px;
+	margin-top:-10px;
+	margin-left:-10px;
 }
 
 .illustration .disc.index-2 .inner:before {
@@ -255,37 +255,52 @@ a:hover {
  	font-size: 2.5rem;
  	position: relative;
  	top: -15px;
+ 	color: lightgreen;
+}
+
+.illustration .disc.index-3 {
+	animation-duration: 16.3s
+}
+
+.illustration .disc.index-3 .inner {
+	top: -150px;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	margin-left: -15px;
+	background: rgb(226,6,238);
+	background: linear-gradient(0deg, rgba(226,6,238,1) 0%, rgba(103,83,251,1) 100%);
 }
 
 .illustration .disc.index-4 {
- animation-duration:21.4s
+	animation-duration:21.4s
 }
 .illustration .disc.index-4 .inner {
- top:-350px;
- width:40px;
- height:40px;
- margin-top:-20px;
- margin-left:-20px;
+	top:-200px;
+	width:34px;
+	height:40px;
+	margin-top:-20px;
+	margin-left:-20px;
 }
 
 .illustration .disc.index-4 .inner:before {
-	content: "\f41b";
+	content: "\f841";
 	font-family: FontAwesome;
- 	font-size: 2.5rem;
+ 	font-size: 2.7rem;
  	position: relative;
  	top: -10px;
+ 	color: lightblue;
 }
 
 .illustration .disc.index-5 {
- animation-duration:26.5s
+	animation-duration:26.5s
 }
 .illustration .disc.index-5 .inner {
- top:-425px;
- width:50px;
- height:50px;
- margin-top:-25px;
- margin-left:-25px;
- content: "\f8e1";
+	top:-250px;
+	width:50px;
+	height:50px;
+	margin-top:-25px;
+	margin-left:-25px;
 }
 
 .illustration .disc.index-5 .inner:before {
@@ -294,14 +309,15 @@ a:hover {
  	font-size: 3.5rem;
  	position: relative;
  	top: -15px;
+ 	color: #e2e938;
 }
 
 @keyframes disc-rotation {
 	0% {
-		-webkit-transform: rotate(140deg);
-		-moz-transform: rotate(140deg);
-		-ms-transform: rotate(140deg);
-		transform: rotate(140deg);
+		-webkit-transform: rotate(14deg);
+		-moz-transform: rotate(14deg);
+		-ms-transform: rotate(14deg);
+		transform: rotate(14deg);
 	}
 
 	100% {
