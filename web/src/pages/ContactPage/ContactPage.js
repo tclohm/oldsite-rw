@@ -43,7 +43,7 @@ const ContactPage = (props) => {
 
 	const onSubmit = (data) => {
 		create({ variables: { input: data }})
-		console.log(data)
+		//console.log(data)
 	}
 
 	function home() {
