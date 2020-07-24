@@ -1,9 +1,10 @@
 import { Link, routes } from "@redwoodjs/router"
-import { Container, Row, Col, Button, Collapse } from "reactstrap"
+import { useAuth } from "@redwoodjs/auth"
+import { Container, Row, Col, Button, Collapse, Badge } from "reactstrap"
 import { useSessionStorage } from "../../hooks/useSessionStorage"
 
 const BlogLayout = ({ children }) => {
-
+  const { logIn, logOut, isAuthenticated, currentUser } = useAuth()
   const [isOpen, setIsOpen] = useSessionStorage("linksOpen", false);
   const [onContact, setOnContact] = useSessionStorage("onContact", false);
   const [onProject, setOnProject] = useSessionStorage("onProject", false);
@@ -49,6 +50,7 @@ const BlogLayout = ({ children }) => {
             <h1><span>Taylor</span> is a 🕸 and 📱 developer</h1>
           </Col>
           <Col xs={{ offset: 1 }}>
+            { isAuthenticated && <h6><Badge color="light">{currentUser.email}</Badge></h6> }
             <Link to={routes.contact()}>
               {onContact ?
                 <Button 
@@ -96,6 +98,11 @@ const BlogLayout = ({ children }) => {
               </Row>
               <Row>
                 <a className="link ml-4 pl-2 mb-0" href="https://www.linkedin.com/in/taylorclohman/"><i className="fab fa-linkedin fa-2x"></i></a>
+              </Row>
+              <Row>
+                <a className="link ml-4 pl-2" onClick={isAuthenticated ? logOut : logIn} href="#" >
+                  {isAuthenticated ? <i class="fas fa-sign-out-alt fa-2x"></i> : <i className="link fas fa-sign-in-alt fa-2x"></i>}
+                </a>
               </Row>
             </Collapse>
             </Col>
