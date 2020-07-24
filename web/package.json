@@ -8,8 +8,8 @@
   "dependencies": {
     "@giphy/js-fetch-api": "^1.5.9",
     "@giphy/react-components": "^1.1.0",
-    "@redwoodjs/router": "^0.3.2",
-    "@redwoodjs/web": "^0.3.2",
+    "@redwoodjs/router": "^0.13.0",
+    "@redwoodjs/web": "^0.13.0",
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha5",
     "error-overlay-webpack-plugin": "^0.4.1",
