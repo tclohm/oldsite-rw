@@ -1,5 +1,5 @@
 import { Link, routes } from "@redwoodjs/router"
-import { Container, Row, Col, Button, Collapse, Badge } from "reactstrap"
+import { Container, Row, Col, Button, Collapse } from "reactstrap"
 import { useSessionStorage } from "../../hooks/useSessionStorage"
 
 const BlogLayout = ({ children }) => {
