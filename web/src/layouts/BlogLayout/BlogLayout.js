@@ -2,6 +2,7 @@ import { Link, routes } from "@redwoodjs/router"
 import { useAuth } from "@redwoodjs/auth"
 import { Container, Row, Col, Button, Collapse, Badge } from "reactstrap"
 import { useSessionStorage } from "../../hooks/useSessionStorage"
+import { useDarkMode } from "../../hooks/useDarkMode"
 
 const BlogLayout = ({ children }) => {
   const { logIn, logOut, isAuthenticated, currentUser } = useAuth()
@@ -10,6 +11,8 @@ const BlogLayout = ({ children }) => {
   const [onProject, setOnProject] = useSessionStorage("onProject", false);
   const [onWriting, setOnWriting] = useSessionStorage("onWriting", false);
   const [onHome, setOnHome] = useSessionStorage("onHome", true);
+
+  const [darkMode, setDarkMode] = useDarkMode(false);
 
   function toggle(event) {
     switch (event.currentTarget.name) {
@@ -40,7 +43,10 @@ const BlogLayout = ({ children }) => {
     }
   }
 
-  
+  function darkModeToggle(event) {
+    event.preventDefault()
+    setDarkMode(!darkMode)
+  }
 
   return  (
   <Container>
@@ -49,8 +55,10 @@ const BlogLayout = ({ children }) => {
             <h1><Link to="/" className="hidden-link"><i className="far fa-hand-paper swing home" onClick={toggle}></i></Link></h1>
             <h1><span>Taylor</span> is a 🕸 and 📱 developer</h1>
           </Col>
-          <Col xs={{ offset: 1 }}>
+          <Col>
             { isAuthenticated && <h6><Badge color="light">{currentUser.email}</Badge></h6> }
+          </Col>
+          <Col xs={{ offset: 1 }}>
             <Link to={routes.contact()}>
               {onContact ?
                 <Button 
