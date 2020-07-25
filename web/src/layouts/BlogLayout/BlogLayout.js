@@ -1,18 +1,13 @@
 import { Link, routes } from "@redwoodjs/router"
-import { useAuth } from "@redwoodjs/auth"
 import { Container, Row, Col, Button, Collapse, Badge } from "reactstrap"
 import { useSessionStorage } from "../../hooks/useSessionStorage"
-import { useDarkMode } from "../../hooks/useDarkMode"
 
 const BlogLayout = ({ children }) => {
-  const { logIn, logOut, isAuthenticated, currentUser } = useAuth()
   const [isOpen, setIsOpen] = useSessionStorage("linksOpen", false);
   const [onContact, setOnContact] = useSessionStorage("onContact", false);
   const [onProject, setOnProject] = useSessionStorage("onProject", false);
   const [onWriting, setOnWriting] = useSessionStorage("onWriting", false);
   const [onHome, setOnHome] = useSessionStorage("onHome", true);
-
-  const [darkMode, setDarkMode] = useDarkMode(false);
 
   function toggle(event) {
     switch (event.currentTarget.name) {
@@ -43,20 +38,13 @@ const BlogLayout = ({ children }) => {
     }
   }
 
-  function darkModeToggle(event) {
-    event.preventDefault()
-    setDarkMode(!darkMode)
-  }
-
   return  (
   <Container>
         <Row className="mt-5">
           <Col>
             <h1><Link to="/" className="hidden-link"><i className="far fa-hand-paper swing home" onClick={toggle}></i></Link></h1>
-            <h1><span>Taylor</span> is a 🕸 and 📱 developer</h1>
-          </Col>
-          <Col>
-            { isAuthenticated && <h6><Badge color="light">{currentUser.email}</Badge></h6> }
+            <h1><span>Taylor</span> Lohman</h1>
+            <p>Web and iOS developer ( 🕸 & 📱 )</p>
           </Col>
           <Col xs={{ offset: 1 }}>
             <Link to={routes.contact()}>
@@ -106,11 +94,6 @@ const BlogLayout = ({ children }) => {
               </Row>
               <Row>
                 <a className="link ml-4 pl-2 mb-0" href="https://www.linkedin.com/in/taylorclohman/"><i className="fab fa-linkedin fa-2x"></i></a>
-              </Row>
-              <Row>
-                <a className="link ml-4 pl-2" onClick={isAuthenticated ? logOut : logIn} href="#" >
-                  {isAuthenticated ? <i class="fas fa-sign-out-alt fa-2x"></i> : <i className="link fas fa-sign-in-alt fa-2x"></i>}
-                </a>
               </Row>
             </Collapse>
             </Col>

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import BlogLayout from "src/layouts/BlogLayout"
+import { useAuth } from "@redwoodjs/auth"
 import { Container, Row, Col, Tooltip } from "reactstrap"
 
 const HomePage = () => {
-
+	const { logIn, logOut, isAuthenticated, currentUser } = useAuth()
 	const [aboutIsOpen, setAboutIsOpen] = useState(false);
-	const toggle = () => setAboutIsOpen(!aboutIsOpen);
+	const toggleAbout = () => setAboutIsOpen(!aboutIsOpen);
 
 	return (
 		<>
@@ -24,15 +25,17 @@ const HomePage = () => {
 					</h5>
 					<div className="circle"> 
 						<div className="memoji mt-5 ml-5" 
-						id="TooltipEx" 
-						href="#">
+						id="aboutblurb" 
+						href="#"
+						alt="apple memoji"
+						>
 						</div>
 					</div>
 					<Tooltip 
 							placement="right" 
 							isOpen={aboutIsOpen} 
-							toggle={toggle} 
-							target="TooltipEx">
+							toggle={toggleAbout} 
+							target="aboutblurb">
 								<h6>Hi. I'm Taylor. I'm a software developer, and I enjoy learning.
 								For more than ten years, I have been working with non-profits, 
 								entrepreneurs, and engineers to help them build products and relationships. 
@@ -65,6 +68,14 @@ const HomePage = () => {
 					</div>
 				</div>
 			</div>
+			<footer className="bd-footer text-muted mt-5">
+          		<p className="ml-3 mt-2">Designed and built by Taylor
+	          		<a className="link ml-1" onClick={isAuthenticated ? logOut : logIn} href="#" >
+	                  {isAuthenticated ? <i className="fas fa-sign-out-alt" style={{ "font-size": "1rem" }}></i> : <i className="link fas fa-sign-in-alt" style={{ "font-size": "1rem" }}></i>}
+	                </a>
+          		</p>
+          		{ isAuthenticated && <h6><Badge color="light">{currentUser.email}</Badge></h6> }
+        	</footer>
 		</>
   	)
 }
