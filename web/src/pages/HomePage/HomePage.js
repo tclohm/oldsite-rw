@@ -1,7 +1,7 @@
 import { useState } from "react";
 import BlogLayout from "src/layouts/BlogLayout"
 import { useAuth } from "@redwoodjs/auth"
-import { Container, Row, Col, Tooltip } from "reactstrap"
+import { Container, Row, Col, Tooltip, Badge } from "reactstrap"
 
 const HomePage = () => {
 	const { logIn, logOut, isAuthenticated, currentUser } = useAuth()
@@ -70,11 +70,11 @@ const HomePage = () => {
 			</div>
 			<footer className="bd-footer text-muted mt-5">
           		<p className="ml-3 mt-2">Designed and built by Taylor
-	          		<a className="link ml-1" onClick={isAuthenticated ? logOut : logIn} href="#" >
+	          		<a className="link ml-1" onClick={isAuthenticated ? logOut : logIn} >
 	                  {isAuthenticated ? <i className="fas fa-sign-out-alt" style={{ "font-size": "1rem" }}></i> : <i className="link fas fa-sign-in-alt" style={{ "font-size": "1rem" }}></i>}
 	                </a>
+	                { isAuthenticated && <h6><Badge className="ml-3" color="light">{currentUser.email}</Badge></h6> }
           		</p>
-          		{ isAuthenticated && <h6><Badge color="light">{currentUser.email}</Badge></h6> }
         	</footer>
 		</>
   	)
