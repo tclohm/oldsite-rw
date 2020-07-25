@@ -332,3 +332,36 @@ a:hover {
 	color: #fff;
 	background: #1E1F21;
 }
+
+.bd-footer {
+	text-align: left;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+	.illustration .circle.index-4 {
+		display: none;
+	}
+
+	.illustration .circle.index-5 {
+		display: none;
+	}
+
+	.illustration .disc.index-4 .inner {
+		display: none;
+	}
+
+	.illustration .disc.index-4 .inner:before {
+		display: none;
+	}
+
+	.illustration .disc.index-5 .inner {
+		display: none;
+	}
+
+	.illustration .disc.index-5 .inner:before {
+		display: none;
+	}
+}
