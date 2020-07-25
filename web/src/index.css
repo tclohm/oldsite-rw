@@ -327,3 +327,8 @@ a:hover {
 		transform: rotate(380deg);
 	}
 }
+
+.dark-mode {
+	color: #fff;
+	background: #1E1F21;
+}
