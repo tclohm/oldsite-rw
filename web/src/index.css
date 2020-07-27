@@ -135,17 +135,17 @@ a:hover {
 }
 
 .memoji {
-	background-image: url("../public/memoji-sticker.png");
+	background-image: url("../public/memoji-sticker-00.png");
 	background-repeat: no-repeat;
 	background-size: 10rem;
 	width: 10rem;
 	height: 10rem;
+	-webkit-transition: background-image 3s ease-in-out;
+	transition: background-image 3s ease-in-out;
 }
 
-.space {
-	background-image: url('../public/bg.svg');
-	width: 20rem;
-	height: 20rem;
+.memoji:hover {
+	background-image: url("../public/memoji-sticker-01.png");
 }
 
 .illustration {
