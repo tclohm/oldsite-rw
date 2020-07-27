@@ -23,13 +23,11 @@ const HomePage = () => {
 					<h5>
 						and building tools and apps
 					</h5>
-					<div className="circle"> 
-						<div className="memoji mt-5 ml-5" 
+					<div className="memoji mt-5 ml-3" 
 						id="aboutblurb" 
 						href="#"
 						alt="apple memoji"
 						>
-						</div>
 					</div>
 					<Tooltip 
 							placement="right" 
