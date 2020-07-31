@@ -14,22 +14,23 @@ const HomePage = () => {
 			<Container>
 			<Row className="mt-5">
 				<Col>
-					<h5>
+					<h5 className="mobile-hide">
 						Welcome
 					</h5>
-					<h5>
+					<h5 className="mobile-hide">
 						I love working with great people
 					</h5>
-					<h5>
+					<h5 className="mobile-hide">
 						and building tools and apps
 					</h5>
-					<div className="memoji mt-5 ml-3" 
+					<div className="memoji mt-5 ml-3 mobile-hide" 
 						id="aboutblurb" 
 						href="#"
 						alt="apple memoji"
 						>
 					</div>
 					<Tooltip 
+							className="mobile-hide"
 							placement="right" 
 							isOpen={aboutIsOpen} 
 							toggle={toggleAbout} 
