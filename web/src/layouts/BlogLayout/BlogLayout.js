@@ -44,7 +44,8 @@ const BlogLayout = ({ children }) => {
           <Col>
             <h1><Link to="/" className="hidden-link"><i className="far fa-hand-paper swing home" onClick={toggle}></i></Link></h1>
             <h1><span>Taylor</span> Lohman</h1>
-            <p>Web and iOS developer ( 🕸 & 📱 )</p>
+            <p>🥞🕸👨‍💻 + 📱</p>
+            <p>Full Stack Web<br/> and iOS developer</p>
           </Col>
           <Col xs={{ offset: 1 }}>
             <Link to={routes.contact()}>

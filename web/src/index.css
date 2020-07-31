@@ -138,8 +138,8 @@ a:hover {
 	background-image: url("../public/memoji-sticker-00.png");
 	background-repeat: no-repeat;
 	background-size: 10rem;
-	width: 9rem;
-	height: 9rem;
+	width: 10rem;
+	height: 10rem;
 	-webkit-transition: background-image 3s ease-in-out;
 	transition: background-image 3s ease-in-out;
 }
@@ -347,6 +347,10 @@ a:hover {
 }
 
 @media only screen and (max-width: 600px) {
+	.mobile-hide {
+		display: none;
+	}
+
 	.illustration .circle.index-4 {
 		display: none;
 	}
@@ -368,6 +372,12 @@ a:hover {
 	}
 
 	.illustration .disc.index-5 .inner:before {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 700px) and (min-width: 600px) {
+	.mobile-hide {
 		display: none;
 	}
 }
