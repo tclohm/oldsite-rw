@@ -12,7 +12,7 @@ const HomePage = () => {
 		<>
 			<BlogLayout></BlogLayout>
 			<Container>
-			<Row className="mt-5">
+			<Row className="mt-4">
 				<Col>
 					<h5 className="mobile-hide">
 						Welcome
