@@ -1,5 +1,6 @@
+import { useState } from "react"
 import { Link, routes } from "@redwoodjs/router"
-import { Container, Row, Col, Button, Collapse } from "reactstrap"
+import { Container, Row, Col, Button, Collapse, Tooltip } from "reactstrap"
 import { useSessionStorage } from "../../hooks/useSessionStorage"
 
 const BlogLayout = ({ children }) => {
@@ -8,6 +9,9 @@ const BlogLayout = ({ children }) => {
   const [onProject, setOnProject] = useSessionStorage("onProject", false);
   const [onWriting, setOnWriting] = useSessionStorage("onWriting", false);
   const [onHome, setOnHome] = useSessionStorage("onHome", true);
+  const [onName, setOnName] = useState(false)
+
+  const toggleFont = () => setOnName(!onName)
 
   function toggle(event) {
     switch (event.currentTarget.name) {
@@ -43,8 +47,18 @@ const BlogLayout = ({ children }) => {
         <Row className="mt-5">
           <Col>
             <h1><Link to="/" className="hidden-link"><i className="far fa-hand-paper swing home" onClick={toggle}></i></Link></h1>
-            <h1><span>Taylor</span> Lohman</h1>
-            <p>🥞🕸👨‍💻 + 📱</p>
+            <h1 className="name"
+                id="fontblurb"
+            >Taylor Lohman</h1>
+            <Tooltip
+              placement="bottom"
+              isOpen={onName}
+              toggle={toggleFont}
+              target="fontblurb"
+              delay="1000"
+            >
+              <p>Font by <a href="https://typewithpride.com">Gilbert</a></p>
+            </Tooltip>
             <p>Full Stack Web<br/> and iOS developer</p>
           </Col>
           <Col xs={{ offset: 1 }}>
