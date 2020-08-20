@@ -1,4 +1,4 @@
-# My portfolio is built off the JAMStack!
+# :awesome: My portfolio is built using RedwoodJS. :awesome:
 
 ### Setup
 
