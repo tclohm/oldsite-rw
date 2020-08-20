@@ -1,6 +1,6 @@
-# :awesome: My portfolio is built using RedwoodJS. :awesome:
+# Bonjour! My portfolio is built using RedwoodJS 🌲
 
-### Setup
+### Setup 💾
 
 We use Yarn as our package manager. To get the dependencies installed, just do this in the root directory:
 
@@ -8,7 +8,7 @@ We use Yarn as our package manager. To get the dependencies installed, just do t
 yarn install
 ```
 
-### Fire it up
+### Fire it up 🚀
 
 ```terminal
 yarn redwood dev
@@ -16,9 +16,9 @@ yarn redwood dev
 
 Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/api/functions/*`.
 
-## Development
+## Development 🧫
 
-### Database
+### Database 🗃
 
 We're using [Prisma2](https://github.com/prisma/prisma2), a modern DB toolkit to query, migrate and model your database.
 
