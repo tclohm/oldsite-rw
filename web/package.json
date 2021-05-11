@@ -13,7 +13,7 @@
     "@redwoodjs/web": "^0.15.3",
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha5",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "netlify-identity-widget": "^1.8.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
